@@ -59,13 +59,9 @@
                  storageBucket: "",
                  };
                  firebase.initializeApp(config);
-                firebase.database().ref('emailsForNotif').once('value').then(function(snapshot) {
-  			var num = (snapshot.val().currCount);
-  			var plusOne = num+1
-  			firebase.database().ref(plusOne).set({
-  				plusOne : inputValue
-  			});
-		});
+  		 firebase.database().ref('emailsForNotif').set({
+  			"email" : inputValue
+  		 });
                  swal("Thanks!", "We will send you an email when our service becomes live! Thanks for visiting! ", "success"); });
         }
     </script>
